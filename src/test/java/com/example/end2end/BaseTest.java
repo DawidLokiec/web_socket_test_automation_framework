@@ -1,4 +1,4 @@
-package com.example;
+package com.example.end2end;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
@@ -34,8 +34,8 @@ public class BaseTest {
                 // Stimulation: Send echo to server's web socket
                 clientReference.tell(msg, getRef() );
                 // Tests {
-                // The expected message should be equal to msg and arrived
-                expectMsg(Duration.ofSeconds(3), msg);
+                // The expected message should be equal to msg
+                expectMsg(Duration.ofSeconds(2), msg);
                 // No more messages are expected.
                 expectNoMessage();
                 // }

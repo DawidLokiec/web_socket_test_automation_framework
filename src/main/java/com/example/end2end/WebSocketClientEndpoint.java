@@ -1,4 +1,4 @@
-package com.example;
+package com.example.end2end;
 
 import org.glassfish.tyrus.client.ClientManager;
 
@@ -11,10 +11,9 @@ import java.io.IOException;
 import java.net.URI;
 
 /** This class represents the client side endpoint of a web socket session.
- *  This class has no modifier to be visible only within its own package.
  */
 @ClientEndpoint
-class WebSocketClientEndpoint {
+public class WebSocketClientEndpoint {
     /** The session between the current client endpoint and the server endpoint. */
     private final Session session;
     /** A message handler to handle incoming messages. */
@@ -39,7 +38,7 @@ class WebSocketClientEndpoint {
             this.messageHandler.onMessage(message);
     }
 
-    /** Sends given message to the server endpoint.
+    /** Sends the given message to the server endpoint.
      *
      * @param message The message to be send to the server endpoint.
      */

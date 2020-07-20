@@ -1,4 +1,4 @@
-package com.example;
+package com.example.end2end;
 
 import akka.actor.ActorRef;
 import akka.actor.UntypedAbstractActor;
