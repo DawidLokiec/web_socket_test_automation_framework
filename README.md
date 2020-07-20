@@ -29,13 +29,13 @@ The task was to test the communication to the server endpoint from the client pe
 5. The client passes these responses to the test that started it.
 6. Finally, the test validate the received response against the expected one.
 
-*The idea to make the client endpoint and the tests as well as single (and possible distributed) processes came from the idea to make a "long living" test case that receives push messages that have to be monitored and validated. Such test case could be deployed with the help of the framework to its own node within a cluster and test the server. The test fails when its process terminates.*
+*The idea to make the client endpoint and the tests as well as single (and possible distributed) processes came from the idea to make a "long living" test case that receives push messages that have to be monitored and validated. Such test case could be deployed with the help of the framework to its own node within a cluster and test the server. The test fails when its process terminates, because of a failing assertion and/or pattern matching.*
 
 ### Java Implementation
 
 The implementation is in Java and with the help of the Akka framework in order to make the client endpoint and the tests as single processes that can communicate over messages rather than callback functions within the same thread. Therefore, the processes are called Actors. 
 
-In practices, I would implement this test automation framework in the programming language **Erlang or Elixier and with the OTP framework**. But because of the short time I had for the coding challenge, I used tools that I am familiar with. But in my point of view an Erlang virtual machine based language is better suited to build such a framework.
+In practices, I would implement this test automation framework in the programming language **Erlang or Elixir and with the OTP framework**. But because of the short time I had for the coding challenge, I used tools that I am familiar with. But in my point of view an Erlang virtual machine based language is better suited to build such a framework.
 
 #### Some code fragments
 
@@ -150,7 +150,7 @@ The minimal setup of a test case with this framework consists of three parts:
 2. Make the stimulation by sending a message such as echo "Message" to the client actor.
 3. And create an actor to receiving and check the replies. This is always the test case itself.
 
-The TestKit class provided by the akka framework contains a collection of tools which makes this three steps easy to write:
+The TestKit class provided by the Akka framework contains a collection of tools which makes this three steps easy to write:
 
 ```java
 public class BaseTest {
@@ -201,7 +201,6 @@ within the project's root directory qa-coding-challenge/
 
 ## Finally
 
-Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a DDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixier and offer DDD, implement the Fluent Design Pattern and more. Because I had a lot of fun doing this challenge, I will create in my free time an open source professional framework for testing web socket API using an Erlang virtual machine.
+Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a DDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixir and offer DDD, implement the Fluent Design Pattern and more. Because I had a lot of fun doing this challenge, I will create in my free time an professional open source framework for testing web socket API using an Erlang virtual machine based programming language.
 
 [Me at LinkedIn](https://www.linkedin.com/in/dawid-ł-8115141a2/)
-
