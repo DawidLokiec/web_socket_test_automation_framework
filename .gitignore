@@ -1,0 +1,13 @@
+# Maven
+log/
+target/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+#VSCode
+.vscode/*
+*.code-workspace
+.history/
