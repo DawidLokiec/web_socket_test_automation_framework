@@ -31,9 +31,9 @@ The task was to test the communication to the server endpoint from the client pe
 
 ### Java Implementation
 
-The implementation is in Java and with the help of the Akka framework in order to make the client endpoint and the tests as single processes that can communicate over messages rather than callback functions within the same thread. Therefore the processes are called Actors. 
+The implementation is in Java and with the help of the Akka framework in order to make the client endpoint and the tests as single processes that can communicate over messages rather than callback functions within the same thread. Therefore, the processes are called Actors. 
 
-In practices I would implement this test automation framework in the programming language **Erlang or Elixier and with the OTP framework**. But because of the short time I had for the coding challenge, I used tools that I am familiar with. But in my point of view an erlang virtual machine based language is better suited to build such a framework.
+In practices, I would implement this test automation framework in the programming language **Erlang or Elixier and with the OTP framework**. But because of the short time I had for the coding challenge, I used tools that I am familiar with. But in my point of view an Erlang virtual machine based language is better suited to build such a framework.
 
 #### Some code fragments
 
@@ -44,7 +44,7 @@ At the end of the day the framework core code consists only of two classes:
 
 ##### Client
 
-The WebSocketClientEndpoint is just a class managing the web socket connection between the server endpoint. It receives messages from the server endpoint and allows to set message handlers.
+The WebSocketClientEndpoint is just a class managing the web socket connection between the server endpoint. It receives messages from the server endpoint and allows to setting message handlers.
 
 ```java
 /** This class represents the client side endpoint of a web socket session.*/
@@ -138,7 +138,7 @@ public class WebSocketClientActor extends UntypedAbstractActor {
 
 This class represents a client which runs as its own process (actor) and receives via the onReceive Method messages from another actors (within the framework only from tests) and sends to the web socket server endpoint. Within the onReceive method it also saves the reference (PID) of the message sender (a test).
 
-Beside this, the class registers an on message handler (handler for incoming socket messages) within the constructor. The handler forwards incoming messages from the server web socket endpoint to the test, that beforehand sent the request data.
+Besides this, the class registers an on message handler (handler for incoming socket messages) within the constructor. The handler forwards incoming messages from the server web socket endpoint to the test, that beforehand sent the request data.
 
 ##### Test
 
@@ -189,8 +189,15 @@ public class BaseTest {
 
 getRef() is the method of the TestKit class which returns its PID. So the client can send messages to this test case.
 
+## Run the tests
+
+This test automation framework is based on maven. In order to run tests just type the following command:
+
+`mvn test`
+
+within the project's root directory qa-coding-challenge/
+
 ## Finally
 
-Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a BDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixier and offer BBD, implement the Fluent Design Pattern and more. Because I had a lot of fun doing this challenge, I will create in my free time an open source professional framework for testing web socket API using an erlang virtual machine.
+Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a DDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixier and offer DDD, implement the Fluent Design Pattern and more. Because I had a lot of fun doing this challenge, I will create in my free time an open source professional framework for testing web socket API using an Erlang virtual machine.
 
- 
