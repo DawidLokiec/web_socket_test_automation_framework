@@ -9,15 +9,21 @@ import javax.websocket.OnMessage;
 import javax.websocket.Session;
 import java.io.IOException;
 import java.net.URI;
-import java.util.ResourceBundle;
 
+/** This class represents the client side endpoint of a web socket session.
+ *  This class has no modifier to be visible only within its own package.
+ */
 @ClientEndpoint
-public class WebSocketClientEndpoint {
+class WebSocketClientEndpoint {
     /** The session between the current client endpoint and the server endpoint. */
     private final Session session;
     /** A message handler to handle incoming messages. */
     private MessageHandler.Whole<String> messageHandler;
 
+    /** Creates the client side endpoint and establish a session with the server's web socket
+     *  addressed by the given URI.
+     * @param serverEndpointURI The URI of the server's endpoint to establish a session via web sockets.
+     */
     public WebSocketClientEndpoint(URI serverEndpointURI) throws IOException, DeploymentException {
         this.session = ClientManager.createClient().connectToServer(this, serverEndpointURI );
     }
