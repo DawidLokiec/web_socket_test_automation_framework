@@ -195,9 +195,9 @@ getRef() is the method of the TestKit class which returns its PID. So the client
 
 This test automation framework is based on maven. In order to run tests just type the following command:
 
-`mvn test`
+``mvn test``
 
-within the project's root directory qa-coding-challenge/
+within the project's root directory.
 
 ## Finally
 
