@@ -29,7 +29,7 @@ The task was to test the communication to the server endpoint from the client pe
 5. The client passes these responses to the test that started it.
 6. Finally, the test validate the received response against the expected one.
 
-*The idea to make the client endpoint and the tests as well as single (and possible distributed) processes came from the idea to make a "long living" test case that receives push messages that have to be monitored and validated. Such test case could be deployed with the help of the framework to its own node within a cluster and test the server. The test fails when its process terminates, because of a failing assertion and/or pattern matching.*
+*The *decision* to make the client endpoint and the tests as well as single (and possible distributed) processes came from the idea to make a "long living" test case that receives push messages that have to be monitored and validated. Such test case could be deployed with the help of the framework to its own node within a cluster and test the server. The test fails when its process terminates, because of a failing assertion and/or pattern matching.*
 
 ### Java Implementation
 
@@ -46,7 +46,7 @@ At the end of the day the framework core code consists only of two classes:
 
 ##### Client
 
-The WebSocketClientEndpoint is just a class managing the web socket connection between the server endpoint. It receives messages from the server endpoint and allows to setting message handlers.
+The WebSocketClientEndpoint is just a class managing the web socket connection between the server endpoint. It receives messages from the server endpoint and allows to setting a message handler.
 
 ```java
 /** This class represents the client side endpoint of a web socket session.*/
@@ -147,7 +147,7 @@ Besides this, the class registers an on message handler (handler for incoming so
 The minimal setup of a test case with this framework consists of three parts:
 
 1. Create an actor under test. This is always the client.
-2. Make the stimulation by sending a message such as echo "Message" to the client actor.
+2. Make the stimulation by sending a message such as echo "Hello World" to the client actor.
 3. And create an actor to receiving and check the replies. This is always the test case itself.
 
 The TestKit class provided by the Akka framework contains a collection of tools which makes this three steps easy to write:
