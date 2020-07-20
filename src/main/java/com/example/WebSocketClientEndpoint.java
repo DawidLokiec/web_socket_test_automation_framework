@@ -9,6 +9,7 @@ import javax.websocket.OnMessage;
 import javax.websocket.Session;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ResourceBundle;
 
 @ClientEndpoint
 public class WebSocketClientEndpoint {
