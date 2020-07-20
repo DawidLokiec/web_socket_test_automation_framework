@@ -16,7 +16,9 @@ In contrast, testing a Web Socket API is different, because of the persistent na
 
 While working on the coding challenge I came across the problem described above and finally came up with an acceptable solution for me:
 
-![solution_architecture](C:\Users\Dawid\Dropbox\Workspace\my_blog\posts\2020\07_july\how_to_test_websockets\solution_architecture.svg)
+![solution_architecture](solution_architecture.svg)
+
+
 
 The task was to test the communication to the server endpoint from the client perspective. That's how the framework does:
 
@@ -200,4 +202,6 @@ within the project's root directory qa-coding-challenge/
 ## Finally
 
 Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a DDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixier and offer DDD, implement the Fluent Design Pattern and more. Because I had a lot of fun doing this challenge, I will create in my free time an open source professional framework for testing web socket API using an Erlang virtual machine.
+
+[Me at LinkedIn](https://www.linkedin.com/in/dawid-ł-8115141a2/)
 
