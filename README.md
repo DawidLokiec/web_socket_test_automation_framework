@@ -203,6 +203,4 @@ within the project's root directory.
 
 ## Finally
 
-Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a DDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixir and offer DDD, implement the Fluent Design Pattern and more. Because I had a lot of fun doing this challenge, I will create in my free time an professional open source framework for testing web socket API using an Erlang virtual machine based programming language.
-
-[Me at LinkedIn](https://www.linkedin.com/in/dawid-ł-8115141a2/)
+Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a DDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixir and offer DDD, implement the Fluent Design Pattern and more.
