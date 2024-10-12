@@ -203,4 +203,4 @@ within the project's root directory.
 
 ## Finally
 
-Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature and that this framework does not use a DDD. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixir and offer DDD, implement the Fluent Design Pattern and more.
+Writing and reading such tests looks pretty complicated. This is due to the fact that Java is not a concurrent and distributed language by nature. This is only a MVP for the coding challenge. The final product should be - as mentioned above - be implemented in a language such as Erlang or Elixir and implement the Fluent Design Pattern and more.
